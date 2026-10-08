@@ -1,0 +1,18 @@
+variavel,rotulo,importancia
+indice_renda,Índice de renda (0–1),0.34714076487376216
+regiao_Africa,Região: Africa,0.2577629119971526
+escolaridade_anos,Escolaridade média (anos),0.12604179246420433
+obitos_infantis,Óbitos infantis,0.08443441442884095
+magreza_1_19,Magreza 10–19 anos (%),0.060436776695830384
+alcool,Álcool (litros per capita),0.03415652571919784
+gasto_saude_total_pct,Gasto total em saúde (%),0.01896069475686144
+pib_per_capita,PIB per capita (US$),0.015784470003776623
+ano,Ano,0.015391443699182985
+gasto_saude_pct_pib_pc,Gasto em saúde (% do PIB per capita),0.010640491777358445
+populacao,População,0.008292085276813303
+regiao_Asia,Região: Asia,0.0052095943561463265
+status_Developed,Status: Desenvolvido,0.004881107565196641
+status_Developing,Status: Em desenvolvimento,0.00486159592513893
+regiao_Americas,Região: Americas,0.0040573953178233094
+regiao_Oceania,Região: Oceania,0.0011695200272473813
+regiao_Europe,Região: Europe,0.0007784151154664748

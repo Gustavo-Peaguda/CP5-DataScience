@@ -1,0 +1,529 @@
+{
+  "projeto": "Checkpoint 5 — Expectativa de vida (regressão)",
+  "alvo": "expectativa_vida",
+  "unidade_alvo": "anos",
+  "configuracao_escolhida": "Random Forest — Grid Search",
+  "modelo": "Random Forest",
+  "estrategia": "Grid Search",
+  "hiperparametros": {
+    "max_depth": null,
+    "max_features": 0.5,
+    "min_samples_leaf": 3,
+    "n_estimators": 100
+  },
+  "hiperparametros_efetivos": {
+    "n_estimators": 100,
+    "max_depth": null,
+    "min_samples_leaf": 3,
+    "max_features": 0.5,
+    "random_state": 42
+  },
+  "features": [
+    "ano",
+    "alcool",
+    "gasto_saude_pct_pib_pc",
+    "gasto_saude_total_pct",
+    "obitos_infantis",
+    "pib_per_capita",
+    "populacao",
+    "magreza_1_19",
+    "indice_renda",
+    "escolaridade_anos",
+    "status",
+    "regiao"
+  ],
+  "features_numericas": [
+    "ano",
+    "alcool",
+    "gasto_saude_pct_pib_pc",
+    "gasto_saude_total_pct",
+    "obitos_infantis",
+    "pib_per_capita",
+    "populacao",
+    "magreza_1_19",
+    "indice_renda",
+    "escolaridade_anos"
+  ],
+  "features_categoricas": [
+    "status",
+    "regiao"
+  ],
+  "variaveis_excluidas": [
+    "pais",
+    "mortalidade_adulta",
+    "obitos_menores_5",
+    "imc",
+    "magreza_5_9",
+    "hiv_aids",
+    "hepatite_b",
+    "polio",
+    "difteria",
+    "sarampo"
+  ],
+  "faixas_numericas": {
+    "ano": [
+      2000,
+      2015,
+      2007.5
+    ],
+    "alcool": [
+      0.01,
+      17.87,
+      3.875
+    ],
+    "gasto_saude_pct_pib_pc": [
+      0.0,
+      19479.91161,
+      78.611324125
+    ],
+    "gasto_saude_total_pct": [
+      0.37,
+      14.39,
+      5.66
+    ],
+    "obitos_infantis": [
+      0,
+      1800,
+      3.0
+    ],
+    "pib_per_capita": [
+      1.68135,
+      119172.7418,
+      1888.61829
+    ],
+    "populacao": [
+      34.0,
+      1293859294.0,
+      1420614.0
+    ],
+    "magreza_1_19": [
+      0.1,
+      27.7,
+      3.4
+    ],
+    "indice_renda": [
+      0.268,
+      0.938,
+      0.699
+    ],
+    "escolaridade_anos": [
+      2.9,
+      20.7,
+      12.5
+    ]
+  },
+  "categorias": {
+    "status": [
+      "Developed",
+      "Developing"
+    ],
+    "regiao": [
+      "Africa",
+      "Americas",
+      "Asia",
+      "Europe",
+      "Oceania"
+    ]
+  },
+  "metricas_teste": {
+    "RMSE": 3.8688886253516026,
+    "MAE": 2.92248044588756,
+    "R2": 0.8397950979594206
+  },
+  "rmse_cv": [
+    4.233032421756843,
+    0.3875855605202441
+  ],
+  "caso_paridade": {
+    "pais": "Indonesia",
+    "ano": 2006,
+    "entrada": {
+      "ano": 2006,
+      "alcool": 0.06,
+      "gasto_saude_pct_pib_pc": 72.0159316,
+      "gasto_saude_total_pct": 2.91,
+      "obitos_infantis": 159,
+      "pib_per_capita": 1586.254,
+      "populacao": 22983822.0,
+      "magreza_1_19": 1.8,
+      "indice_renda": 0.632,
+      "escolaridade_anos": 10.9,
+      "status": "Developing",
+      "regiao": "Asia"
+    },
+    "y_real": 67.3,
+    "previsao_notebook": 68.01123351370853
+  },
+  "versoes": {
+    "python": "3.14.6",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0",
+    "optuna": "5.0.0",
+    "pandas": "3.0.6",
+    "numpy": "2.4.4"
+  },
+  "seed": 42,
+  "casos_paridade": [
+    {
+      "pais": "Colombia",
+      "ano": 2013,
+      "entrada": {
+        "ano": 2013,
+        "alcool": 4.41,
+        "gasto_saude_pct_pib_pc": 15.16255482,
+        "gasto_saude_total_pct": 6.84,
+        "obitos_infantis": 11,
+        "pib_per_capita": 83.5863,
+        "populacao": 47342981.0,
+        "magreza_1_19": 2.1,
+        "indice_renda": 0.712,
+        "escolaridade_anos": 13.3,
+        "status": "Developing",
+        "regiao": "Americas"
+      },
+      "y_real": 74.4,
+      "previsao_notebook": 74.40291377511377
+    },
+    {
+      "pais": "Ethiopia",
+      "ano": 2009,
+      "entrada": {
+        "ano": 2009,
+        "alcool": 1.17,
+        "gasto_saude_pct_pib_pc": 53.77354001,
+        "gasto_saude_total_pct": 4.41,
+        "obitos_infantis": 169,
+        "pib_per_capita": 379.7566385,
+        "populacao": 85416253.0,
+        "magreza_1_19": 11.1,
+        "indice_renda": 0.393,
+        "escolaridade_anos": 8.1,
+        "status": "Developing",
+        "regiao": "Africa"
+      },
+      "y_real": 68.0,
+      "previsao_notebook": 53.01213769841271
+    },
+    {
+      "pais": "Indonesia",
+      "ano": 2006,
+      "entrada": {
+        "ano": 2006,
+        "alcool": 0.06,
+        "gasto_saude_pct_pib_pc": 72.0159316,
+        "gasto_saude_total_pct": 2.91,
+        "obitos_infantis": 159,
+        "pib_per_capita": 1586.254,
+        "populacao": 22983822.0,
+        "magreza_1_19": 1.8,
+        "indice_renda": 0.632,
+        "escolaridade_anos": 10.9,
+        "status": "Developing",
+        "regiao": "Asia"
+      },
+      "y_real": 67.3,
+      "previsao_notebook": 68.01123351370853
+    },
+    {
+      "pais": "Slovenia",
+      "ano": 2004,
+      "entrada": {
+        "ano": 2004,
+        "alcool": 10.0,
+        "gasto_saude_pct_pib_pc": 235.3785281,
+        "gasto_saude_total_pct": 8.47,
+        "obitos_infantis": 0,
+        "pib_per_capita": 1726.9151,
+        "populacao": 199712.0,
+        "magreza_1_19": 2.0,
+        "indice_renda": 0.85,
+        "escolaridade_anos": 16.6,
+        "status": "Developed",
+        "regiao": "Europe"
+      },
+      "y_real": 77.2,
+      "previsao_notebook": 77.77799949494953
+    },
+    {
+      "pais": "Belize",
+      "ano": 2011,
+      "entrada": {
+        "ano": 2011,
+        "alcool": 6.64,
+        "gasto_saude_pct_pib_pc": 605.6286892,
+        "gasto_saude_total_pct": 5.61,
+        "obitos_infantis": 0,
+        "pib_per_capita": 4516.24675,
+        "populacao": 329192.0,
+        "magreza_1_19": 3.5,
+        "indice_renda": 0.7,
+        "escolaridade_anos": 12.4,
+        "status": "Developing",
+        "regiao": "Americas"
+      },
+      "y_real": 69.4,
+      "previsao_notebook": 72.76394570707072
+    },
+    {
+      "pais": "Japan",
+      "ano": 2011,
+      "entrada": {
+        "ano": 2011,
+        "alcool": 7.39,
+        "gasto_saude_pct_pib_pc": 9498.729062,
+        "gasto_saude_total_pct": 1.7,
+        "obitos_infantis": 3,
+        "pib_per_capita": 48167.99727,
+        "populacao": 127833.0,
+        "magreza_1_19": 1.9,
+        "indice_renda": 0.884,
+        "escolaridade_anos": 15.1,
+        "status": "Developed",
+        "regiao": "Asia"
+      },
+      "y_real": 82.5,
+      "previsao_notebook": 82.45516230158728
+    },
+    {
+      "pais": "Canada",
+      "ano": 2000,
+      "entrada": {
+        "ano": 2000,
+        "alcool": 7.6,
+        "gasto_saude_pct_pib_pc": 3787.49456,
+        "gasto_saude_total_pct": 8.67,
+        "obitos_infantis": 2,
+        "pib_per_capita": 24124.16917,
+        "populacao": 37697.0,
+        "magreza_1_19": 0.5,
+        "indice_renda": 0.864,
+        "escolaridade_anos": 15.9,
+        "status": "Developing",
+        "regiao": "Americas"
+      },
+      "y_real": 79.1,
+      "previsao_notebook": 81.24134650072148
+    }
+  ],
+  "tolerancia_paridade": {
+    "rtol": 1e-09,
+    "atol": 1e-06
+  },
+  "pergunta": "Dadas características socioeconômicas, demográficas e de gasto em saúde observadas para um país em determinado ano, prever a expectativa de vida ao nascer daquele país-ano.",
+  "fonte": "Life Expectancy (WHO) — Kaggle (kumarajarshi/life-expectancy-who); regiões: tabela ISO auxiliar",
+  "n_observacoes": 2928,
+  "n_paises": 183,
+  "n_treino": 2336,
+  "n_teste": 592,
+  "dicionario_variaveis": [
+    {
+      "variavel": "pais",
+      "descricao": "Nome do país",
+      "unidade": "—",
+      "tipo": "texto/identificador",
+      "usada_no_modelo": false,
+      "justificativa": "Identificador; como preditor o modelo memorizaria países. Agrupa as partições treino/teste e a CV"
+    },
+    {
+      "variavel": "ano",
+      "descricao": "Ano de referência (2000–2015)",
+      "unidade": "ano",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Nível/tendência temporal do painel; o modelo não prevê anos futuros"
+    },
+    {
+      "variavel": "status",
+      "descricao": "Status de desenvolvimento (Developed / Developing)",
+      "unidade": "categoria",
+      "tipo": "categórica",
+      "usada_no_modelo": true,
+      "justificativa": "Contexto estrutural do país"
+    },
+    {
+      "variavel": "mortalidade_adulta",
+      "descricao": "Mortalidade adulta (15–60 anos)",
+      "unidade": "por 1.000 adultos",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Relação direta com o alvo; possível data leakage"
+    },
+    {
+      "variavel": "obitos_infantis",
+      "descricao": "Óbitos infantis",
+      "unidade": "contagem",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Indicador de saúde infantil; forte associação com o alvo registrada nas limitações"
+    },
+    {
+      "variavel": "alcool",
+      "descricao": "Consumo de álcool per capita",
+      "unidade": "litros",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Determinante de saúde"
+    },
+    {
+      "variavel": "gasto_saude_pct_pib_pc",
+      "descricao": "Gasto em saúde (percentage expenditure, definição da fonte)",
+      "unidade": "% do PIB per capita",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Determinante; valores > 100 são plausíveis nesta definição da fonte"
+    },
+    {
+      "variavel": "hepatite_b",
+      "descricao": "Cobertura vacinal Hepatite B",
+      "unidade": "% de cobertura",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Indicador de doença/imunização; escopo do projeto; muitas ausências"
+    },
+    {
+      "variavel": "sarampo",
+      "descricao": "Casos de sarampo notificados",
+      "unidade": "casos",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Contagem de casos de doença; escopo do projeto"
+    },
+    {
+      "variavel": "imc",
+      "descricao": "IMC médio",
+      "unidade": "kg/m²",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Valores implausíveis para média nacional; dado não confiável"
+    },
+    {
+      "variavel": "obitos_menores_5",
+      "descricao": "Óbitos de menores de 5 anos",
+      "unidade": "contagem",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Sobreposição conceitual com `obitos_infantis`"
+    },
+    {
+      "variavel": "polio",
+      "descricao": "Cobertura vacinal Pólio",
+      "unidade": "% de cobertura",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Indicador de doença/imunização; escopo do projeto"
+    },
+    {
+      "variavel": "gasto_saude_total_pct",
+      "descricao": "Gasto total em saúde (% do gasto governamental)",
+      "unidade": "% do gasto governamental",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Determinante de financiamento da saúde"
+    },
+    {
+      "variavel": "difteria",
+      "descricao": "Cobertura vacinal Difteria (DTP3)",
+      "unidade": "% de cobertura",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Indicador de doença/imunização; escopo do projeto"
+    },
+    {
+      "variavel": "hiv_aids",
+      "descricao": "Mortes por HIV/AIDS por 1.000 nascidos vivos (0–4 anos)",
+      "unidade": "por 1.000 nasc. vivos",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Indicador de doença; escopo do projeto não inclui doenças; muito próximo de mortalidade"
+    },
+    {
+      "variavel": "pib_per_capita",
+      "descricao": "PIB per capita",
+      "unidade": "US$",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Determinante econômico"
+    },
+    {
+      "variavel": "populacao",
+      "descricao": "População",
+      "unidade": "habitantes",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Escala do país; muitos ausentes (imputados no Pipeline)"
+    },
+    {
+      "variavel": "magreza_1_19",
+      "descricao": "Prevalência de magreza em 10–19 anos (nome original '1–19')",
+      "unidade": "%",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Indicador nutricional de adolescentes"
+    },
+    {
+      "variavel": "magreza_5_9",
+      "descricao": "Prevalência de magreza em 5–9 anos",
+      "unidade": "%",
+      "tipo": "numérica",
+      "usada_no_modelo": false,
+      "justificativa": "Redundante com `magreza_1_19` (ρ de Spearman = 0.94 no treino)"
+    },
+    {
+      "variavel": "indice_renda",
+      "descricao": "Composição de renda dos recursos (índice tipo IDH)",
+      "unidade": "índice 0–1",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Se derivado do IDH, pode conter informação indireta de saúde; risco registrado nas limitações"
+    },
+    {
+      "variavel": "escolaridade_anos",
+      "descricao": "Anos médios de escolaridade",
+      "unidade": "anos",
+      "tipo": "numérica",
+      "usada_no_modelo": true,
+      "justificativa": "Determinante social"
+    },
+    {
+      "variavel": "regiao",
+      "descricao": "Continente/região (tabela ISO auxiliar)",
+      "unidade": "categoria",
+      "tipo": "categórica",
+      "usada_no_modelo": true,
+      "justificativa": "Contexto geográfico (fonte externa, sem relação direta com o alvo)"
+    }
+  ],
+  "rotulos": {
+    "ano": "Ano",
+    "alcool": "Álcool (litros per capita)",
+    "gasto_saude_pct_pib_pc": "Gasto em saúde (% do PIB per capita)",
+    "gasto_saude_total_pct": "Gasto total em saúde (%)",
+    "obitos_infantis": "Óbitos infantis",
+    "pib_per_capita": "PIB per capita (US$)",
+    "populacao": "População",
+    "magreza_1_19": "Magreza 10–19 anos (%)",
+    "indice_renda": "Índice de renda (0–1)",
+    "escolaridade_anos": "Escolaridade média (anos)",
+    "status": "Status",
+    "regiao": "Região",
+    "expectativa_vida": "Expectativa de vida (anos)"
+  },
+  "tipos_numericos": {
+    "ano": "inteiro",
+    "alcool": "decimal",
+    "gasto_saude_pct_pib_pc": "decimal",
+    "gasto_saude_total_pct": "decimal",
+    "obitos_infantis": "inteiro",
+    "pib_per_capita": "decimal",
+    "populacao": "decimal",
+    "magreza_1_19": "decimal",
+    "indice_renda": "decimal",
+    "escolaridade_anos": "decimal"
+  },
+  "categoria_padrao": {
+    "status": "Developing",
+    "regiao": "Africa"
+  },
+  "regra_selecao": "1 erro-padrão sobre o melhor RMSE médio de CV; entre as elegíveis, menor gap treino-validação e depois menor tempo de ajuste (definida antes do teste)"
+}
