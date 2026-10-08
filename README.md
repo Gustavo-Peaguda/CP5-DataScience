@@ -46,13 +46,13 @@ Os algoritmos **Random Forest**, **XGBoost** e **LightGBM** são comparados sob 
 
 | Item | Valor |
 |---|---|
-| Configuração escolhida | XGBoost — Optuna |
-| RMSE na validação cruzada | 4,09 ± 0,21 anos |
-| RMSE no teste | 3,93 anos |
-| MAE no teste | 2,95 anos |
+| Configuração escolhida | LightGBM — Optuna |
+| RMSE na validação cruzada | 4,27 ± 0,45 anos |
+| RMSE no teste | 3,97 anos |
+| MAE no teste | 3,06 anos |
 | R² no teste | 0,83 |
 
-Os valores finais exatos ficam registrados no notebook e em `modelo/meta.json` após a execução.
+Base: 2.928 observações de 183 países (2.336 no treino e 592 no teste, separados por país). Os valores finais exatos ficam registrados no notebook e em `modelo/meta.json` após a execução.
 
 ---
 
@@ -68,6 +68,24 @@ Compilado de dados públicos da OMS (Global Health Observatory) e da ONU. Os arq
 ---
 
 ## Como instalar e executar
+
+### Estrutura do repositório
+
+```
+README.md
+projeto_checkpoint5/
+├── Checkpoint05_Expectativa_Vida_RF_XGB_LGBM.ipynb
+├── app.py
+├── requirements.txt
+├── dados/
+└── modelo/
+```
+
+Todos os comandos abaixo devem ser executados dentro da pasta `projeto_checkpoint5`:
+
+```bash
+cd projeto_checkpoint5
+```
 
 ### 1. Instalar as dependências
 
@@ -85,7 +103,7 @@ py -m pip install -r requirements.txt
 
 ### 2. Executar o notebook (gera o modelo e os arquivos da pasta `modelo/`)
 
-Abra `Checkpoint05_Expectativa_Vida_RF_XGB_LGBM.ipynb` na **raiz do projeto** e use **Run All**. Isso gera `modelo/modelo_final.joblib`, `modelo/meta.json` e os demais arquivos usados pelo aplicativo.
+Abra `Checkpoint05_Expectativa_Vida_RF_XGB_LGBM.ipynb` a partir da pasta `projeto_checkpoint5` e use **Run All**. Isso gera `modelo/modelo_final.joblib`, `modelo/meta.json` e os demais arquivos usados pelo aplicativo.
 
 ### 3. Executar a aplicação Streamlit
 
