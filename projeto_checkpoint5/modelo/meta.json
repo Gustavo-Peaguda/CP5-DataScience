@@ -2,20 +2,26 @@
   "projeto": "Checkpoint 5 — Expectativa de vida (regressão)",
   "alvo": "expectativa_vida",
   "unidade_alvo": "anos",
-  "configuracao_escolhida": "Random Forest — Grid Search",
-  "modelo": "Random Forest",
-  "estrategia": "Grid Search",
+  "configuracao_escolhida": "LightGBM — Optuna",
+  "modelo": "LightGBM",
+  "estrategia": "Optuna",
   "hiperparametros": {
-    "max_depth": null,
-    "max_features": 0.5,
-    "min_samples_leaf": 3,
-    "n_estimators": 100
+    "n_estimators": 200,
+    "learning_rate": 0.048667474966308945,
+    "num_leaves": 22,
+    "min_child_samples": 17,
+    "subsample": 0.8564602092891798,
+    "colsample_bytree": 0.6706187838501331,
+    "reg_lambda": 6.24671080707679
   },
   "hiperparametros_efetivos": {
-    "n_estimators": 100,
-    "max_depth": null,
-    "min_samples_leaf": 3,
-    "max_features": 0.5,
+    "n_estimators": 200,
+    "learning_rate": 0.048667474966308945,
+    "num_leaves": 22,
+    "min_child_samples": 17,
+    "subsample": 0.8564602092891798,
+    "colsample_bytree": 0.6706187838501331,
+    "reg_lambda": 6.24671080707679,
     "random_state": 42
   },
   "features": [
@@ -126,38 +132,38 @@
     ]
   },
   "metricas_teste": {
-    "RMSE": 3.8688886253516026,
-    "MAE": 2.92248044588756,
-    "R2": 0.8397950979594206
+    "RMSE": 3.970912536300452,
+    "MAE": 3.063600300733983,
+    "R2": 0.8312343766150937
   },
   "rmse_cv": [
-    4.233032421756843,
-    0.3875855605202441
+    4.268144818429916,
+    0.4543412382099537
   ],
   "caso_paridade": {
     "pais": "Indonesia",
-    "ano": 2006,
+    "ano": 2008,
     "entrada": {
-      "ano": 2006,
-      "alcool": 0.06,
-      "gasto_saude_pct_pib_pc": 72.0159316,
-      "gasto_saude_total_pct": 2.91,
-      "obitos_infantis": 159,
-      "pib_per_capita": 1586.254,
-      "populacao": 22983822.0,
-      "magreza_1_19": 1.8,
-      "indice_renda": 0.632,
-      "escolaridade_anos": 10.9,
+      "ano": 2008,
+      "alcool": 0.07,
+      "gasto_saude_pct_pib_pc": 10.26341108,
+      "gasto_saude_total_pct": 2.81,
+      "obitos_infantis": 149,
+      "pib_per_capita": 216.52766,
+      "populacao": 236159276.0,
+      "magreza_1_19": 1.7,
+      "indice_renda": 0.641,
+      "escolaridade_anos": 11.7,
       "status": "Developing",
       "regiao": "Asia"
     },
-    "y_real": 67.3,
-    "previsao_notebook": 68.01123351370853
+    "y_real": 67.7,
+    "previsao_notebook": 69.71816325099566
   },
   "versoes": {
     "python": "3.14.6",
     "scikit-learn": "1.8.0",
-    "xgboost": "3.4.1",
+    "xgboost": "1.6.2",
     "lightgbm": "4.7.0",
     "optuna": "5.0.0",
     "pandas": "3.0.6",
@@ -166,64 +172,64 @@
   "seed": 42,
   "casos_paridade": [
     {
-      "pais": "Colombia",
-      "ano": 2013,
+      "pais": "Peru",
+      "ano": 2012,
       "entrada": {
-        "ano": 2013,
-        "alcool": 4.41,
-        "gasto_saude_pct_pib_pc": 15.16255482,
-        "gasto_saude_total_pct": 6.84,
-        "obitos_infantis": 11,
-        "pib_per_capita": 83.5863,
-        "populacao": 47342981.0,
-        "magreza_1_19": 2.1,
-        "indice_renda": 0.712,
-        "escolaridade_anos": 13.3,
+        "ano": 2012,
+        "alcool": 5.14,
+        "gasto_saude_pct_pib_pc": 885.9858185,
+        "gasto_saude_total_pct": 5.18,
+        "obitos_infantis": 9,
+        "pib_per_capita": 6387.785281,
+        "populacao": 3158966.0,
+        "magreza_1_19": 1.1,
+        "indice_renda": 0.725,
+        "escolaridade_anos": 13.4,
         "status": "Developing",
         "regiao": "Americas"
       },
-      "y_real": 74.4,
-      "previsao_notebook": 74.40291377511377
+      "y_real": 74.9,
+      "previsao_notebook": 74.87361943324171
     },
     {
-      "pais": "Ethiopia",
-      "ano": 2009,
+      "pais": "Niger",
+      "ano": 2013,
       "entrada": {
-        "ano": 2009,
-        "alcool": 1.17,
-        "gasto_saude_pct_pib_pc": 53.77354001,
-        "gasto_saude_total_pct": 4.41,
-        "obitos_infantis": 169,
-        "pib_per_capita": 379.7566385,
-        "populacao": 85416253.0,
-        "magreza_1_19": 11.1,
-        "indice_renda": 0.393,
-        "escolaridade_anos": 8.1,
+        "ano": 2013,
+        "alcool": 0.01,
+        "gasto_saude_pct_pib_pc": 31.50243237,
+        "gasto_saude_total_pct": 5.9,
+        "obitos_infantis": 49,
+        "pib_per_capita": 416.14838,
+        "populacao": 18426372.0,
+        "magreza_1_19": 1.0,
+        "indice_renda": 0.341,
+        "escolaridade_anos": 5.3,
         "status": "Developing",
         "regiao": "Africa"
       },
-      "y_real": 68.0,
-      "previsao_notebook": 53.01213769841271
+      "y_real": 69.0,
+      "previsao_notebook": 53.469849243355505
     },
     {
       "pais": "Indonesia",
-      "ano": 2006,
+      "ano": 2008,
       "entrada": {
-        "ano": 2006,
-        "alcool": 0.06,
-        "gasto_saude_pct_pib_pc": 72.0159316,
-        "gasto_saude_total_pct": 2.91,
-        "obitos_infantis": 159,
-        "pib_per_capita": 1586.254,
-        "populacao": 22983822.0,
-        "magreza_1_19": 1.8,
-        "indice_renda": 0.632,
-        "escolaridade_anos": 10.9,
+        "ano": 2008,
+        "alcool": 0.07,
+        "gasto_saude_pct_pib_pc": 10.26341108,
+        "gasto_saude_total_pct": 2.81,
+        "obitos_infantis": 149,
+        "pib_per_capita": 216.52766,
+        "populacao": 236159276.0,
+        "magreza_1_19": 1.7,
+        "indice_renda": 0.641,
+        "escolaridade_anos": 11.7,
         "status": "Developing",
         "regiao": "Asia"
       },
-      "y_real": 67.3,
-      "previsao_notebook": 68.01123351370853
+      "y_real": 67.7,
+      "previsao_notebook": 69.71816325099566
     },
     {
       "pais": "Slovenia",
@@ -243,7 +249,7 @@
         "regiao": "Europe"
       },
       "y_real": 77.2,
-      "previsao_notebook": 77.77799949494953
+      "previsao_notebook": 77.56553997347567
     },
     {
       "pais": "Belize",
@@ -263,27 +269,27 @@
         "regiao": "Americas"
       },
       "y_real": 69.4,
-      "previsao_notebook": 72.76394570707072
+      "previsao_notebook": 72.78657679344415
     },
     {
       "pais": "Japan",
-      "ano": 2011,
+      "ano": 2013,
       "entrada": {
-        "ano": 2011,
-        "alcool": 7.39,
-        "gasto_saude_pct_pib_pc": 9498.729062,
-        "gasto_saude_total_pct": 1.7,
-        "obitos_infantis": 3,
-        "pib_per_capita": 48167.99727,
-        "populacao": 127833.0,
-        "magreza_1_19": 1.9,
-        "indice_renda": 0.884,
-        "escolaridade_anos": 15.1,
+        "ano": 2013,
+        "alcool": 7.55,
+        "gasto_saude_pct_pib_pc": 94.43428615,
+        "gasto_saude_total_pct": 1.25,
+        "obitos_infantis": 2,
+        "pib_per_capita": 4454.44746,
+        "populacao": 127445.0,
+        "magreza_1_19": 2.0,
+        "indice_renda": 0.894,
+        "escolaridade_anos": 15.3,
         "status": "Developed",
         "regiao": "Asia"
       },
-      "y_real": 82.5,
-      "previsao_notebook": 82.45516230158728
+      "y_real": 83.5,
+      "previsao_notebook": 80.81373248107862
     },
     {
       "pais": "Canada",
@@ -303,7 +309,7 @@
         "regiao": "Americas"
       },
       "y_real": 79.1,
-      "previsao_notebook": 81.24134650072148
+      "previsao_notebook": 80.6325473987314
     }
   ],
   "tolerancia_paridade": {
